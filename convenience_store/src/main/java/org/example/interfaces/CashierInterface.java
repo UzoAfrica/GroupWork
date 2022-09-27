@@ -1,10 +1,9 @@
 package org.example.interfaces;
 
-import org.example.model.Applicant;
-import org.example.model.Cashier;
+import org.example.model.*;
 
 public interface CashierInterface {
-    String sellsProduct (Cashier cashier);
-    String givesReceipt (Cashier cashier);
+    Receipt approvePaymentAndIssueReceipt (ToPaySlip toPaySlip, Customers customers);
+
 
 }
