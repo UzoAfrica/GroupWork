@@ -1,16 +1,14 @@
 package org.example.model;
 
-import org.example.enums.Role;
 import org.example.interfaces.CustomerInterface;
-import org.example.model.Person;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Customers extends Person implements CustomerInterface {
 
     private double walletBalance;
     private String transactionId;
+    List<Product> itemsToBuy;
     public Customers() {
     }
 
@@ -33,17 +31,19 @@ public class Customers extends Person implements CustomerInterface {
 
 
     @Override
-    public String buysProduct(Customers customers, Store store) {
+    public String buysProduct(Product product) {
     String result = "";
-        List<Product> itemsToBuy = new ArrayList<>();
 
-        if (itemsToBuy.contains(store.getListOfProducts())){
+
+        if (product.getPrice() <= this.walletBalance)
+        {
             result = "The product is available, proceed to make payment";
         }else {
-            result = "Sorry, we are out of stock";
+            result = "Sorry, you have insufficient fund";
         }
 
         return result;
     }
+
 }
 

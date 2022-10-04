@@ -26,6 +26,7 @@ public class Main {
 
         System.out.println(akpan.apply(akpan));
 
+
         System.out.println(uzor.hire(akpan));
 
         Product product = new Product();
